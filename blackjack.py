@@ -49,8 +49,6 @@ def compare_scores(user_score, computer_score):
 while users_turn:
     user_score = calculate_score(user_hand)
     if busted:
-        if 11 in user_hand:
-            user_hand[user_hand.index(11)] = 1
         print(f"{user_name['user']}'s score is {user_score}. {user_name['user']} busted!!")
         print(f"The computer had {sum(computer_hand)}. The computer wins")
         game_over = True
