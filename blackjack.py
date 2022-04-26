@@ -29,8 +29,12 @@ def calculate_score(player_hand):
     global busted
     global blackjack
     if sum(player_hand) > 21:
-        busted = True 
-        return sum(player_hand)
+        if 11 not in player_hand:
+            busted = True
+            return sum(player_hand) 
+        else:
+            player_hand[player_hand.index(11)] = 1
+            return sum(player_hand)
     elif sum(player_hand) == 21:
         blackjack = True
         return sum(player_hand)
